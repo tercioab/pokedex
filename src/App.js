@@ -8,56 +8,18 @@ class App extends React.Component {
 		this.state = {
 			tipo: "",
 		};
-
-		this.eletric = this.eletric.bind(this);
-		this.fire = this.fire.bind(this);
-		this.bug = this.bug.bind(this);
-		this.poison = this.poison.bind(this);
-		this.psychic = this.psychic.bind(this);
-		this.normal = this.normal.bind(this);
-		this.dragon = this.dragon.bind(this);
 	}
 
-	eletric() {
-		this.setState({ tipo: "Electric" });
-	}
-
-	fire() {
-		this.setState({ tipo: "Fire" });
-	}
-
-	bug() {
-		this.setState({ tipo: "Bug" });
-	}
-
-	poison() {
-		this.setState({ tipo: "Poison" });
-	}
-
-	psychic() {
-		this.setState({ tipo: "Psychic" });
-	}
-
-	normal() {
-		this.setState({ tipo: "Normal" });
-	}
-
-	dragon() {
-		this.setState({ tipo: "Dragon" });
-	}
-
-	setFilterValue(event) {
-		this.setState({ tipo: event.target.value });
+	filtro(tipo) {
+		this.setState({ tipo: tipo });
 	}
 
 	render() {
-	
 		const final = pokemons.filter(
 			(poke) =>
 				poke.type.includes(this.state.tipo) ||
 				poke.name.includes(this.state.tipo),
 		);
-		
 
 		return (
 			<div>
@@ -72,13 +34,15 @@ class App extends React.Component {
 					</div>
 
 					<div className="buttons">
-						<button onClick={this.eletric}>Electric</button>
-						<button onClick={this.fire}>Fire</button>
-						<button onClick={this.bug}>Bug</button>
-						<button onClick={this.poison}>Poison</button>
-						<button onClick={this.psychic}>Psychic</button>
-						<button onClick={this.normal}>Normal</button>
-						<button onClick={this.dragon}>Dragon</button>
+						<button onClick={(tipo) => this.filtro("Electric")}>
+							Electric
+						</button>
+						<button onClick={(tipo) => this.filtro("Fire")}>Fire</button>
+						<button onClick={(tipo) => this.filtro("Bug")}>Bug</button>
+						<button onClick={(tipo) => this.filtro("Poison")}>Poison</button>
+						<button onClick={(tipo) => this.filtro("Psychic")}>Psychic</button>
+						<button onClick={(tipo) => this.filtro("Normal")}>Normal</button>
+						<button onClick={(tipo) => this.filtro("Dragon")}>Dragon</button>
 					</div>
 				</div>
 
