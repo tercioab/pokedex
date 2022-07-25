@@ -149,15 +149,33 @@ justify-content: center;
 
 input {
   width: 75%;
-  margin-bottom: 1rem;
-  margin-top: 3cm;
+  margin-bottom: 2rem;
 }
 
-@media screen and (min-width: 800px) { 
+
+.footer-classe {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #000000;
+  margin-top: 1rem;
+  padding: 0.4rem;
+  font-size: 1rem;
+  color: #e4e4e4;
+}
+
+
+.footer-classe a {
+  text-decoration: none;
+  color: #0476D9; 
+ 
+}
+
+@media screen and (min-width: 971px) { 
 
   .geral {
     display: flex;
     flex-wrap: wrap;
+    padding: 1cm;
   }
 
 
@@ -193,7 +211,24 @@ input {
 
 .procura{
   display: flex;
-  align-items: center;
+ justify-content: center;
+ 
+ 
   
 }
+
+.footer-classe {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #000000;
+  margin-top: 1rem;
+  padding: 0.4rem;
+  font-size: 1rem;
+  color: #e4e4e4;
+}
+
+.footer-classe p {
+  margin-left: 0.5cm;
+}
+
 }
