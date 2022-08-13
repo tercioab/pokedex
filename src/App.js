@@ -14,6 +14,10 @@ class App extends React.Component {
 		this.setState({ tipo: tipoPokemon });
 	}
 
+	teste = ({target}) => {
+		this.setState({ tipo: target.name });
+	}
+
 	limpar() {
 		this.setState({ tipo: "" });
 	}
@@ -22,19 +26,27 @@ class App extends React.Component {
 		this.setState({ tipo: event.target.value });
 	}
 
-	
+	// upperCase = () => {
+	// 	const pokeLower = pokemons.map((pokes) => pokes.toLowerCase())
+	// 	const pokerUp = pokemons.map((pokes) => pokes.toUpperCase())
+		
+	// }
+
+
  
 	render() {
-		const final = pokemons.filter((poke) =>
+		const final = pokemons.filter((poke) => 
 				poke.type.includes(this.state.tipo) ||
 				poke.name.includes(this.state.tipo),
 		);
+		const  namesButton = ["Electric", "Fire", "Bug", "Poison", "Psychic", "Normal", "Dragon"]
 		return (
 			<div>
 				<h1 className="title">POKEDEX</h1>
 				<div className="procura">
 					<div className="input-class">
 						<input
+							className="inputText"
 							type="text"
 							placeholder="qual especie/nome?"
 							onChange={(event) => this.setFilterValue(event)}
@@ -42,15 +54,8 @@ class App extends React.Component {
 					</div>
 
 					<div className="buttons">
-						<button onClick={(tipo) => this.filtro("Electric")}>
-							Electric
-						</button>
-						<button onClick={(tipo) => this.filtro("Fire")}>Fire</button>
-						<button onClick={(tipo) => this.filtro("Bug")}>Bug</button>
-						<button onClick={(tipo) => this.filtro("Poison")}>Poison</button>
-						<button onClick={(tipo) => this.filtro("Psychic")}>Psychic</button>
-						<button onClick={(tipo) => this.filtro("Normal")}>Normal</button>
-						<button onClick={(tipo) => this.filtro("Dragon")}>Dragon</button>
+						<button className="clearButton" onClick={(tipo) => this.filtro("")}>LIMPAR</button>
+						{namesButton.map((names) => <button onClick={(tipo) => this.filtro(names)}>{ names }</button>)}
 					</div>
 				</div>
 				<div className="geral">
