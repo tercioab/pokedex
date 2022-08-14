@@ -13,14 +13,14 @@
 
 .title {
   height: 2cm;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 1);
 	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 1.cm;
 	backdrop-filter: blur(5px);
-  position:fixed;
+  
   width: 100%;
 }
 
@@ -110,6 +110,7 @@
 } 
 
 .buttons {
+  
   display: flex;
   flex-wrap: wrap;
   width: 16rem;
@@ -131,6 +132,11 @@ button {
 
 }
 
+.clearButton {
+  background-color: white;
+  border: solid 2px ;
+}
+
 button:hover {
   width: 5rem;
   height: 2rem;
@@ -148,8 +154,8 @@ justify-content: center;
 }
 
 input {
-  width: 52%;
-  margin-top: 3cm;
+  width: 75%;
+  margin-bottom: 2rem;
 }
 
 
@@ -173,22 +179,29 @@ input {
 @media screen and (min-width: 971px) { 
 
   .geral {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1cm;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 0cm !important ;
+    grid-row-gap: 2cm ;
+    grid-gap: 1cm;
+    
+    
   }
 
 
+
+
 .subgeral {
+  border: solid 2px rgb(182, 182, 182);
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
   flex-direction: column;
   align-items: center;
   background-color: #e4e4e4;
   margin-top: 1%;
   width: 17rem;
   height: 9.7cm;
+  justify-content: initial;
+  
 }
 
 input {
@@ -204,8 +217,9 @@ input {
 .buttons {
   display: flex;
   flex-wrap: wrap;
-  width: 40rem;
-  margin-left: 0rem;
+  width: 45rem;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 3cm;
 } 
 
@@ -229,6 +243,11 @@ input {
 
 .footer-classe p {
   margin-left: 0.5cm;
+}
+
+.title {
+  background-color: rgba(0, 0, 0, 0.9);
+  position:fixed;
 }
 
 }
